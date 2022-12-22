@@ -1,0 +1,31 @@
+create or replace package pkg_query as 
+type cur_query is ref cursor;
+end pkg_query;
+/
+
+create or replace procedure page(pageIndex in number, querySql in varchar2, pageNumber in number, 
+                            totalPages out number, rs out pkg_query.cur_query)                 
+is
+numberSql varchar2(1000) := ''; 
+queryStr varchar2(1000) := '';
+startNum number(4);
+endNum number(4);
+totalRecores number(4);
+begin
+  numberSql := 'select to_number(count(*)) from ('|| querySql || ')'; 
+  execute immediate numberSql into totalRecores;
+  if (totalRecores <= pageNumber) then
+    totalPages := 1;
+  elsif mod(totalRecores,pageNumber)=0 then 
+    totalPages := totalRecores / pageNumber;
+  else
+    totalPages := totalRecores / pageNumber + 1;
+  end if;
+  startNum := (pageIndex - 1) * pageNumber + 1;
+  endNum := pageIndex * pageNumber;
+  queryStr := 'select * from (' || querySql || ' and rownum<='|| endNum|| ') where rn>=' || 
+
+startNum;
+  open rs for queryStr;
+end;
+/

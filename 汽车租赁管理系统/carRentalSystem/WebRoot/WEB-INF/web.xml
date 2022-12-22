@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<filter>
+	<filter-name>encode</filter-name>
+	<filter-class>com.bluedot.web.filter.EncodingFilter</filter-class>
+	<init-param>
+		<param-name>encode</param-name>
+		<param-value>utf-8</param-value>
+	</init-param>
+	</filter>	
+	<filter-mapping>
+		<filter-name>encode</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+		<filter>
+		<filter-name>Login</filter-name>
+		<filter-class>com.bluedot.web.filter.LoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Login</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>safe</filter-name>
+		<filter-class>com.bluedot.web.filter.SafeFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>safe</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+  <servlet>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>com.bluedot.web.systemservlet.Login</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ExitSystem</servlet-name>
+    <servlet-class>com.bluedot.web.systemservlet.ExitSystem</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PreAddUser</servlet-name>
+    <servlet-class>com.bluedot.web.usermanagerservlet.PreAddUser</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddUser</servlet-name>
+    <servlet-class>com.bluedot.web.usermanagerservlet.AddUser</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PreFindUser</servlet-name>
+    <servlet-class>com.bluedot.web.usermanagerservlet.PreFindUser</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>FindUser</servlet-name>
+    <servlet-class>com.bluedot.web.usermanagerservlet.FindUser</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PreUpdateUser</servlet-name>
+    <servlet-class>com.bluedot.web.usermanagerservlet.PreUpdateUser</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateUser</servlet-name>
+    <servlet-class>com.bluedot.web.usermanagerservlet.UpdateUser</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteUser</servlet-name>
+    <servlet-class>com.bluedot.web.usermanagerservlet.DeleteUser</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddCustomers</servlet-name>
+    <servlet-class>com.bluedot.web.customermanagerservlet.AddCustomers</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>FindCustomers</servlet-name>
+    <servlet-class>com.bluedot.web.customermanagerservlet.FindCustomers</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PreUpdateCustomers</servlet-name>
+    <servlet-class>com.bluedot.web.customermanagerservlet.PreUpdateCustomers</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateCustomers</servlet-name>
+    <servlet-class>com.bluedot.web.customermanagerservlet.UpdateCustomers</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddCar</servlet-name>
+    <servlet-class>com.bluedot.web.carmanagerservlet.AddCar</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>FindCar</servlet-name>
+    <servlet-class>com.bluedot.web.carmanagerservlet.FindCar</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PreUpdateCar</servlet-name>
+    <servlet-class>com.bluedot.web.carmanagerservlet.PreUpdateCar</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateCar</servlet-name>
+    <servlet-class>com.bluedot.web.carmanagerservlet.UpdateCar</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteCar</servlet-name>
+    <servlet-class>com.bluedot.web.carmanagerservlet.DeleteCar</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteCustomers</servlet-name>
+    <servlet-class>com.bluedot.web.customermanagerservlet.DeleteCustomers</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PreChangeUserPwd</servlet-name>
+    <servlet-class>com.bluedot.web.usermanagerservlet.PreChangeUserPwd</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ChangeUserPwd</servlet-name>
+    <servlet-class>com.bluedot.web.usermanagerservlet.ChangeUserPwd</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PreChangeCustomerPwd</servlet-name>
+    <servlet-class>com.bluedot.web.customermanagerservlet.PreChangeCustomerPwd</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ChangeCustomersPwd</servlet-name>
+    <servlet-class>com.bluedot.web.customermanagerservlet.ChangeCustomersPwd</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PreCreateRentCarTable</servlet-name>
+    <servlet-class>com.bluedot.web.operatormanagerservlet.PreCreateRentCarTable</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CreateRentCarTable</servlet-name>
+    <servlet-class>com.bluedot.web.operatormanagerservlet.CreateRentCarTable</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PreReturnCarSearch</servlet-name>
+    <servlet-class>com.bluedot.web.operatormanagerservlet.PreReturnCarSearch</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CreateCheckTable</servlet-name>
+    <servlet-class>com.bluedot.web.operatormanagerservlet.CreateCheckTable</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RentManagerSearch</servlet-name>
+    <servlet-class>com.bluedot.web.operatormanagerservlet.RentManagerSearch</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PreUpdateRenttable</servlet-name>
+    <servlet-class>com.bluedot.web.operatormanagerservlet.PreUpdateRenttable</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateRenttable</servlet-name>
+    <servlet-class>com.bluedot.web.operatormanagerservlet.UpdateRenttable</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteRenttable</servlet-name>
+    <servlet-class>com.bluedot.web.operatormanagerservlet.DeleteRenttable</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>FindCheckTable</servlet-name>
+    <servlet-class>com.bluedot.web.operatormanagerservlet.FindCheckTable</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PreUdateCheckTable</servlet-name>
+    <servlet-class>com.bluedot.web.operatormanagerservlet.PreUdateCheckTable</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateCheckTable</servlet-name>
+    <servlet-class>com.bluedot.web.operatormanagerservlet.UpdateCheckTable</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteCheckTables</servlet-name>
+    <servlet-class>com.bluedot.web.operatormanagerservlet.DeleteCheckTables</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>MonthReturnCar</servlet-name>
+    <servlet-class>com.bluedot.web.operatorstate.MonthReturnCar</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>FindMonthReturnCarByInfo</servlet-name>
+    <servlet-class>com.bluedot.web.operatorstate.FindMonthReturnCarByInfo</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ExitSystem</servlet-name>
+    <url-pattern>/ExitSystem.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PreAddUser</servlet-name>
+    <url-pattern>/PreAddUser.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddUser</servlet-name>
+    <url-pattern>/AddUser.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PreFindUser</servlet-name>
+    <url-pattern>/PreFindUser.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FindUser</servlet-name>
+    <url-pattern>/FindUser.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PreUpdateUser</servlet-name>
+    <url-pattern>/PreUpdateUser.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateUser</servlet-name>
+    <url-pattern>/UpdateUser.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteUser</servlet-name>
+    <url-pattern>/DeleteUser.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddCustomers</servlet-name>
+    <url-pattern>/AddCustomers.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FindCustomers</servlet-name>
+    <url-pattern>/FindCustomers.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PreUpdateCustomers</servlet-name>
+    <url-pattern>/PreUpdateCustomers.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateCustomers</servlet-name>
+    <url-pattern>/UpdateCustomers.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddCar</servlet-name>
+    <url-pattern>/AddCar.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FindCar</servlet-name>
+    <url-pattern>/FindCar.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PreUpdateCar</servlet-name>
+    <url-pattern>/PreUpdateCar.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateCar</servlet-name>
+    <url-pattern>/UpdateCar.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteCar</servlet-name>
+    <url-pattern>/DeleteCar.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteCustomers</servlet-name>
+    <url-pattern>/DeleteCustomers.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PreChangeUserPwd</servlet-name>
+    <url-pattern>/PreChangeUserPwd.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangeUserPwd</servlet-name>
+    <url-pattern>/ChangeUserPwd.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PreChangeCustomerPwd</servlet-name>
+    <url-pattern>/PreChangeCustomerPwd.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangeCustomersPwd</servlet-name>
+    <url-pattern>/ChangeCustomersPwd.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PreCreateRentCarTable</servlet-name>
+    <url-pattern>/PreCreateRentCarTable.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CreateRentCarTable</servlet-name>
+    <url-pattern>/CreateRentCarTable.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PreReturnCarSearch</servlet-name>
+    <url-pattern>/PreReturnCarSearch.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CreateCheckTable</servlet-name>
+    <url-pattern>/CreateCheckTable.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RentManagerSearch</servlet-name>
+    <url-pattern>/RentManagerSearch.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PreUpdateRenttable</servlet-name>
+    <url-pattern>/PreUpdateRenttable.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateRenttable</servlet-name>
+    <url-pattern>/UpdateRenttable.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteRenttable</servlet-name>
+    <url-pattern>/DeleteRenttable.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FindCheckTable</servlet-name>
+    <url-pattern>/FindCheckTable.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PreUdateCheckTable</servlet-name>
+    <url-pattern>/PreUdateCheckTable.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateCheckTable</servlet-name>
+    <url-pattern>/UpdateCheckTable.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteCheckTables</servlet-name>
+    <url-pattern>/DeleteCheckTables.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MonthReturnCar</servlet-name>
+    <url-pattern>/MonthReturnCar.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FindMonthReturnCarByInfo</servlet-name>
+    <url-pattern>/FindMonthReturnCarByInfo.do</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
